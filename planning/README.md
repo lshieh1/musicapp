@@ -9,7 +9,7 @@
 ## Wireframe  (Your wireframes go here. Preferably two or more) 
 images in current folder
 
-## Initial thoughts on game structure  (Write out what challenges you expect to encounter, or ideas you want to come up with)
+## Initial thoughts on structure  (Write out what challenges you expect to encounter, or ideas you want to come up with)
   I want to be able to create multiple playlist for each user but I'm not sure how complicated that will end up being.  The most basic version of my app with just one playlist per user will be very similar to the favorites charts we used previously.  I will be accessing the tracks through the Spotify API and create playlists through that. I also plan on searching based on category where I will list out the tracks based on artist, genre, etc.  
 
 ## Phases of Completion  (The steps or phases you expect to go through, and the tasks that you'll need to accomplish to reach each step. These should resemble the acceptance criteria we were working through earlier.)  
