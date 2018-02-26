@@ -1,12 +1,8 @@
 # musicapp
 
 *** Lillian Shieh / Feb 26, 2018 ***  
-
-# MusicApp Proposal  
 ## What is my app?  (Brief description of the game, why you're choosing to make it)  
   It's a music app that creates playlists for users and can hopefully play the playlist as well.
-  
-## Wireframe  (Your wireframes go here. Preferably two or more) 
 
 
 ## Initial thoughts on game structure  (Write out what challenges you expect to encounter, or ideas you want to come up with)
