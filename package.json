@@ -1,0 +1,31 @@
+{
+  "name": "musicapp",
+  "version": "1.0.0",
+  "description": "music playlist app",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js",
+    "dev": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lshieh1/musicapp.git"
+  },
+  "author": "LS",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lshieh1/musicapp/issues"
+  },
+  "homepage": "https://github.com/lshieh1/musicapp#readme",
+  "dependencies": {
+    "cookie-parser": "^1.4.3",
+    "ejs": "^2.5.7",
+    "express": "^4.16.2",
+    "morgan": "^1.9.0",
+    "node-spotify-api": "^1.0.7",
+    "pg-promise": "^8.1.0",
+    "querystring": "^0.2.0",
+    "request": "^2.83.0"
+  }
+}
