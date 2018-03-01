@@ -1,0 +1,9 @@
+<% include ../particles/boilerpoint.ejs %>
+
+<form method='POST' action='/playlists/<%= data.id %>?_method=PUT'>
+	<input name='id' type='hidden' value='<%= data.id %>'>
+	<input name='name' type='text' value='<%= data.name %>'>
+	<input type="submit" value="Submit">
+</form>
+
+<% include ../particles/footer.ejs %>

@@ -41,9 +41,9 @@
 //     });
 //   }
 // });
-var Spotify = require('node-spotify-api');
+const Spotify = require('node-spotify-api');
  
-var spotify = new Spotify({
+const spotify = new Spotify({
   id: '2cc4313fc6ce4651943f4e925552e3f3',
   secret: '16668c5c91534d798d68b215b963470d'
 });
@@ -56,8 +56,10 @@ var spotify = new Spotify({
 //   .catch(function(err) {
 //     console.error('Error occurred: ' + err); 
 //   });
-spotify.search({type: 'track',query: 'Miley Cyrus'}).then(function(res) {
-  console.log(res.tracks.items[0])
+spotify.search({type: 'track',query: 'Shinhwa'}).then(function(res) {
+  console.log(res.tracks.items[0].id)
 }).catch(function(err) {
   console.log(err)
 })
+
+module.exports = spotify

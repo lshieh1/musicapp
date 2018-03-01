@@ -1,7 +1,7 @@
-module.exports = {
-	host: 'localhost',
-	port: 5432,
-	database: 'musicapp_db',
-	username: 'lillian',
-	password: '123'
-}
+module.exports = process.env.DATABASE_URL || {
+  host:     process.env.DB_HOST || 'localhost',
+  port:     process.env.DB_PORT || 5432,
+  database: process.env.DB_NAME || 'musicapp_db',
+  username: 'lillian',
+  password: '123'
+};

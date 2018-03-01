@@ -1,0 +1,12 @@
+<% include ../particles/boilerpoint.ejs %>
+
+<% for(let playlist of data) { %>
+	<div class='playlist'>
+		<p><%= playlist.name %></p>
+		<a href='/playlists/<%= playlist.id %>'>See Tracks</a>
+	</div>
+<% } %>
+
+<a href='/playlists/new'>Create new Playlist</a>
+
+<% include ../particles/footer.ejs %>
