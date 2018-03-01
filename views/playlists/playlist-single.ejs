@@ -1,0 +1,13 @@
+<% include ../particles/boilerpoint.ejs %>
+
+<div class='playlist'>
+	<h2><%= data.name %></h2>
+
+	<a href='/playlists/<%= data.id %>/edit'>Edit playlist name</a>
+	<form action='/playlists/<%= data.id %>?_method=DELETE' method='POST'>
+		<input type='Submit' value='Delete'>
+	</form>
+	<a href='/playlists/'>See all playlists</a>
+</div>
+
+<% include ../particles/footer.ejs %>

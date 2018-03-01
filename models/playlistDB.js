@@ -2,7 +2,7 @@ const db = require('../config/connection')
 
 module.exports = {
 	findAll() {
-		return db.any('SELECT * FROM playlists')
+		return db.any('SELECT * FROM playlists ORDER BY name')
 	},
 
 	findById(id) {
@@ -10,14 +10,15 @@ module.exports = {
 	},
 
 	save(playlist) {
-		return db.one('INSERT INTO playlists(name) VALUES ($[name]) RETURNING id',playlist)
+		return db.one('INSERT INTO playlists(name) VALUES ($[name]) RETURNING *',playlist)
 	},
 
 	update(playlist) {
-		return db.one('UPDATE playlists SET name=$[name] RETURNING *',playlist)
+		return db.one('UPDATE playlists SET name=$[name] WHERE id=$[id] RETURNING *',playlist)
 	},
 
 	destroy(id) {
 		return db.none('DELETE FROM playlists WHERE id=$1',id)
 	}
+	// have to delete the tracks corresponding to this playlist
 }

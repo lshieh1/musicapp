@@ -14,9 +14,9 @@ module.exports = {
   	},
 
   	showOne(req,res) {
-  		// res.render('playlists/playlist-single', {
-  		// 	data: res.locals.playlist
-  		// })
+  		res.render('playlists/playlist-single', {
+  			data: res.locals.playlist
+  		})
   	},
 
   	showAddForm(req,res) {
@@ -24,7 +24,9 @@ module.exports = {
   	},
 
   	showEditForm(req,res) {
-  		res.render('playlists/playlist-edit')
+  		res.render('playlists/playlist-edit', {
+  			data: res.locals.playlist
+  		})
   	},
 
   	handleCreate(req,res) {
@@ -32,11 +34,10 @@ module.exports = {
   	},
 
   	handleUpdate(req,res) {
-  		res.redirect(`/quotes/${req.params.id}`)
+  		res.redirect(`/playlists/${req.params.id}`)
   	},
 
   	handleDelete(req,res) {
-  		res.redirect('/quotes')
+  		res.redirect('/playlists')
   	}
-
 }
