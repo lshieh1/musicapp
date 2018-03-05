@@ -28,18 +28,18 @@ Pull lyrics from lyrics.ovh API
 -CSS
 
 ## Installation Instruction
-'''
+```
 npm i
-'''
-'''
+```
+```
 npm run dev
-'''
+```
 ## Unsolved Problems
 I'm just hoping to improve this app so it can actually play music in the playlists and completely figure out the Spotify API.
 
 
 ## Links and Resources  (Anything you've looked up so far or are thinking about using.)
-'''
+```
 		request(url, (error,response,body) => {
 			let parsed = JSON.parse(body)
 			req.body.lyrics = parsed.lyrics
@@ -50,6 +50,6 @@ I'm just hoping to improve this app so it can actually play music in the playlis
 				next(err)
 			})
 		})
-'''
+```
 https://lyrics.ovh/, http://docs.lyricsovh.apiary.io/
 https://getbootstrap.com/ (used a little bit... probably not enough)
