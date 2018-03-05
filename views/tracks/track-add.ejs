@@ -1,0 +1,12 @@
+<% include ../particles/boilerpoint.ejs %>
+
+<form method='POST' action='/playlists/<%= data.playlist_id %>'>
+	<div class='form-group'>
+		<input name='artist' class="form-control" type='text' placeholder='Track Artist'>
+		<input name='title' class="form-control" type='text' placeholder='Track Title'>
+		<input name='lyrics' class="form-control" type='hidden' value='<%= data.lyrics %>'>
+		<input name='playlist_id' class="form-control" type='hidden' value='<%= data.playlist_id %>'>
+	</div>
+	<input type='submit' class="btn btn-primary" value='Add'>
+</form>
+<% include ../particles/footer.ejs %>

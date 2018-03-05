@@ -1,4 +1,5 @@
 const db = require('../config/connection')
+const playlistDB = {}
 
 module.exports = {
 	findAll() {
@@ -18,7 +19,8 @@ module.exports = {
 	},
 
 	destroy(id) {
-		return db.none('DELETE FROM playlists WHERE id=$1',id)
+		return db.none('DELETE FROM tracks WHERE playlist_id=$1',id).then(() => {
+			return db.none('DELETE FROM playlists WHERE id=$1',id)
+		})
 	}
-	// have to delete the tracks corresponding to this playlist
 }

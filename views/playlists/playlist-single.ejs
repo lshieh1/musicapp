@@ -2,11 +2,20 @@
 
 <div class='playlist'>
 	<h2><%= data.name %></h2>
-
 	<a href='/playlists/<%= data.id %>/edit'>Edit playlist name</a>
-	<form action='/playlists/<%= data.id %>?_method=DELETE' method='POST'>
-		<input type='Submit' value='Delete'>
-	</form>
+	<% for(let track of tdata) { %>
+		<div class="border">
+			<div>
+				<p><%= track.title %> - <%= track.artist %></p>
+				<a href='/playlists/<%= data.id %>/<%= track.id %>'>More Info</a>
+			</div>
+			<form action='/playlists/<%= data.id %>/<%= track.id %>?_method=DELETE' method='POST'>
+				<input class="btn btn-outline-info" type='Submit' value='Delete'>
+			</form>
+		</div>
+	<% } %>
+	<a href='/playlists/<%= data.id %>/new'>Add Track</a>
+
 	<a href='/playlists/'>See all playlists</a>
 </div>
 

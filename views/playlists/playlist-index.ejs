@@ -1,9 +1,12 @@
 <% include ../particles/boilerpoint.ejs %>
-
+<h2>Playlists</h2>
 <% for(let playlist of data) { %>
-	<div class='playlist'>
-		<p><%= playlist.name %></p>
+	<div class='playlist border w-20 p-3 d-inline-block'>
+		<h3><%= playlist.name %></h3>
 		<a href='/playlists/<%= playlist.id %>'>See Tracks</a>
+		<form method='POST' action='/playlists/<%= playlist.id %>?_method=Delete'>
+			<input class="btn btn-primary" type='submit' value='Delete Playlist'/>
+		</form>
 	</div>
 <% } %>
 

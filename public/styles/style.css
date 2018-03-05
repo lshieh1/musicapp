@@ -1,0 +1,12 @@
+* {
+	text-align: center;
+}
+
+.intro {
+	position: relative;
+}
+
+.home {
+	position: relative;
+	top: 200px;
+}

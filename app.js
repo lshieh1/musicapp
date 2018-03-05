@@ -1,11 +1,17 @@
 const express = require('express')
 const logger = require('morgan')
-const request = require('request')
 const methodOverride = require('method-override')
 const bodyParser = require('body-parser')
 const playlistRouter = require('./routes/playlist_router')
 const port = process.env.PORT || 3000
 
+// let credentials = {
+//   clientId : '2cc4313fc6ce4651943f4e925552e3f3',
+//   clientSecret : '16668c5c91534d798d68b215b963470d',
+//   redirectUri : 'http://localhost:3000/callback'
+// };
+
+// let spotify = new Spotify(credentials);
 const app = express()
 
 app.use(logger('dev'))

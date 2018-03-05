@@ -15,7 +15,8 @@ module.exports = {
 
   	showOne(req,res) {
   		res.render('playlists/playlist-single', {
-  			data: res.locals.playlist
+  			data: res.locals.playlist,
+  			tdata: res.locals.tracks
   		})
   	},
 
@@ -39,5 +40,25 @@ module.exports = {
 
   	handleDelete(req,res) {
   		res.redirect('/playlists')
+  	},
+
+  	showOneTrack(req,res) {
+  		res.render('tracks/track-single', {
+  			data: res.locals.track
+  		})
+  	},
+
+  	showTrackAddForm(req,res) {
+  		res.render('tracks/track-add', {
+        data: res.locals.track
+      })
+  	},
+
+  	handleTrackCreate(req,res) {
+  		res.redirect(`/playlists/${req.params.id}`)
+  	},
+
+  	handleTrackDelete(req,res) {
+  		res.redirect(`/playlists/${req.params.id}`)
   	}
 }

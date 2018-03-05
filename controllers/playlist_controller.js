@@ -22,7 +22,6 @@ module.exports = {
 
 	getOne(req,res,next) {
 		playlistDB.findById(req.params.id).then(playlist => {
-			console.log(playlist)
 			res.locals.playlist = playlist
 			next()
 		}).catch(err => {

@@ -1,0 +1,10 @@
+<% include ../particles/boilerpoint.ejs %>
+
+<div class='track'>
+	<h2><%= data.title %> - <%= data.artist %></h2>
+
+	<p><%- data.lyrics.replace(/\n/g, "<br />") %></p>
+	<a href='/playlists/<%= data.playlist_id %>'>Back to Playlist</a>
+</div>
+
+<% include ../particles/footer.ejs %>
