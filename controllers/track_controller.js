@@ -38,13 +38,18 @@ module.exports = {
 		let hold = ''
 		request(url, (error,response,body) => {
 			let parsed = JSON.parse(body)
-			req.body.lyrics = parsed.lyrics
-			trackDB.save(req.body).then(track => {
-				res.locals.track = track
-				next()
-			}).catch(err => {
-				next(err)
-			})
+			if(parsed.error == undefined) {
+				req.body.lyrics = parsed.lyrics
+				trackDB.save(req.body).then(track => {
+					res.locals.track = track
+					next()
+				}).catch(err => {
+					next(err)
+				})
+			} else {
+				res.redirect(`/playlists/${req.params.id}`)
+			}
+
 		})
 	},
 

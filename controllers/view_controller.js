@@ -55,7 +55,7 @@ module.exports = {
   	},
 
   	handleTrackCreate(req,res) {
-  		res.redirect(`/playlists/${req.params.id}`)
+      res.redirect(`/playlists/${req.params.id}`)
   	},
 
   	handleTrackDelete(req,res) {
