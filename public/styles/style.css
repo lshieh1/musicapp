@@ -10,3 +10,17 @@
 	position: relative;
 	top: 200px;
 }
+
+h1 {
+	background: url('https://s3.envato.com/files/44226346/Prew.jpg');
+	height: 200px;
+	color: white;
+}
+
+footer {
+	background: url('https://s3.envato.com/files/44226346/Prew.jpg');
+	position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+}

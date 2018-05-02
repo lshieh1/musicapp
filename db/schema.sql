@@ -1,4 +1,4 @@
-\c musicapp_db;
+
 
 DROP TABLE IF EXISTS tracks;
 DROP TABLE IF EXISTS playlists;
