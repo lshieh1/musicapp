@@ -14,6 +14,7 @@ CREATE TABLE tracks (
 	title VARCHAR(255),
 	artist VARCHAR(255),
 	lyrics VARCHAR(1000000),
+	link VARCHAR(255),
 	playlist_id INTEGER REFERENCES playlists(id),
 	date_created TIMESTAMP NOT NULL DEFAULT NOW()
 );

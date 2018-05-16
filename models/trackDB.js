@@ -11,7 +11,7 @@ module.exports = {
 	},
 
 	save(track) {
-		return db.one('INSERT INTO tracks(title,artist,lyrics,playlist_id) VALUES ($[title],$[artist],$[lyrics],$[playlist_id]) RETURNING *',track)
+		return db.one('INSERT INTO tracks(title,artist,lyrics,link,playlist_id) VALUES ($[title],$[artist],$[lyrics],$[link],$[playlist_id]) RETURNING *',track)
 	},
 
 	destroy(id) {

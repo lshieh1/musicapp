@@ -1,6 +1,8 @@
 const trackDB = require('../models/trackDB')
 const request = require('request')
 const trackController = {}
+const search = require('youtube-search')
+const opts = require('../config/search')
 
 module.exports = {
 	makeBlankTrack(req,res,next) {
@@ -35,16 +37,20 @@ module.exports = {
 
 	create(req,res,next) {
 		let url = `https://api.lyrics.ovh/v1/${req.body.artist}/${req.body.title}`
-		let hold = ''
+		let searchTerm = `${req.body.artist} ${req.body.title}`
 		request(url, (error,response,body) => {
 			let parsed = JSON.parse(body)
 			if(parsed.error == undefined) {
-				req.body.lyrics = parsed.lyrics
-				trackDB.save(req.body).then(track => {
-					res.locals.track = track
-					next()
-				}).catch(err => {
-					next(err)
+				search(searchTerm,opts,(err,results) => {
+					if(err) return console.log(err)
+					req.body.link = `//www.youtube.com/embed/${results[0].id}`
+					req.body.lyrics = parsed.lyrics
+					trackDB.save(req.body).then(track => {
+						res.locals.track = track
+						next()
+					}).catch(err => {
+						next(err)
+					})
 				})
 			} else {
 				res.redirect(`/playlists/${req.params.id}`)

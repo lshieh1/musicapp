@@ -2,9 +2,10 @@
 
 <div class='track'>
 	<h2 class='text-capitalize'><%= data.title %> - <%= data.artist %></h2>
-	<a href='/playlists/<%= data.playlist_id %>'><< Back to Playlist</a>
-	<p><%- data.lyrics.replace(/\n/g, "<br />") %></p>
-	<a href='/playlists/<%= data.playlist_id %>'><< Back to Playlist</a>
+	<a class='back-playlist' href='/playlists/<%= data.playlist_id %>'><< Back to Playlist</a>
+	<div><iframe src='<%= data.link %>' frameborder="0" allowfullscreen></iframe></div>
+	<div class='lyrics'><%- data.lyrics.replace(/\n/g, "<br />") %></div>
+	<a class='lyrics' href='/playlists/<%= data.playlist_id %>'><< Back to Playlist</a>
 	<hr />
 </div>
 
